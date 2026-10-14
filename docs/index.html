@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper Sequence</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="stage" id="stage">
+    <div class="floor"></div>
+
+    <div class="bin" id="bin">
+      <div class="bin-back"></div>
+      <div class="bin-front"></div>
+    </div>
+
+    <div class="paper" id="paper">
+      <div class="shadow"></div>
+      <div class="card" id="card">
+        <div class="face front">
+          <span class="line"></span><span class="line"></span><span class="line"></span>
+          <span class="line"></span><span class="line"></span><span class="line"></span>
+        </div>
+        <div class="face back">
+          <p>you found me.</p>
+          <p class="small">now let me go.</p>
+        </div>
+        <div class="peek"><span>you f</span></div>
+        <div class="wrinkles"></div>
+      </div>
+      <svg class="ball" id="ball" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M50 6 L70 12 L88 30 L94 52 L86 74 L68 90 L46 94 L26 86 L10 68 L6 46 L14 24 L30 10 Z" fill="#f4f1ea"/>
+        <path d="M30 10 L42 34 L14 24 M42 34 L70 12 M42 34 L58 52 L88 30 M58 52 L94 52 M58 52 L68 90 M58 52 L36 64 L10 68 M36 64 L46 94 M36 64 L6 46 M42 34 L36 64" fill="none" stroke="#c9c3b6" stroke-width="2"/>
+      </svg>
+      <svg class="hold-ring" id="ring" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="54"/>
+      </svg>
+    </div>
+
+    <div class="hud">
+      <ol class="steps" id="steps">
+        <li>Pick up</li><li>Flip</li><li>Crumple</li><li>Throw</li>
+      </ol>
+      <p class="hint" id="hint"></p>
+    </div>
+
+    <div class="end" id="end">
+      <p>Gone.</p>
+      <button type="button" id="restart">Start again</button>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
