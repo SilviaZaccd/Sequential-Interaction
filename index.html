@@ -9,11 +9,26 @@
       margin: 0;
       min-height: 100vh;
       background-color: #222;
-      background-image: url("test-image.jpg");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
       font-family: system-ui, sans-serif;
+    }
+
+    /* Blurred copy fills the screen edges */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -40px;
+      z-index: -2;
+      background: url("test-image.jpg") center / cover no-repeat;
+      filter: blur(30px) brightness(0.8);
+    }
+
+    /* Full photo, never cropped */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: url("test-image.jpg") center / contain no-repeat;
     }
 
     h1 {
